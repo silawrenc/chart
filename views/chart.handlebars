@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/chart.dist.css" />
+  <script src="/chart.dist.js"></script>
+  <title>Demo chart</title>
+</head>
+
+<body>
+  <noscript>
+    This chart requires javascript to display.
+  </noscript>
+
+  <div id="success">
+    Chart updated &#x2714;
+  </div>
+
+  <div id="alert">
+    Chart could not be updated &#x2716;
+  </div>
+  <header>
+    <h1>Demo chart</h1>
+  </header>
+
+  <main>
+    <section id="chart-container">
+      <svg width="100%" height="100%" id="chart"></svg>
+    </section>
+    <section class="controls">
+      <section data-control="first" data-control-color="#5279c7">
+        <h2>Data set #1</h2>
+        {{> controls random=true }}
+      </section>
+      <section data-control="second" data-control-color="#fad419">
+        <h2>Data set #2</h2>
+        {{> controls linear=true }}
+      </section>
+      <section data-control="third" data-control-color="#db2e65">
+        <h2>Data set #3</h2>
+        {{> controls polynomial=true}}
+      </section>
+    </section>
+  </main>
+</body>
+</html>

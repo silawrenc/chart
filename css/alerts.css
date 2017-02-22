@@ -1,0 +1,24 @@
+noscript, #alert, #success {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #ea4a4a;
+  padding: 1em;
+  color: white;
+}
+
+#success {
+  background: #49beaa;
+}
+
+#alert, #success {
+  position: fixed;
+  z-index: 10;
+  height: 3em;
+  top: -3em;
+  transition: top 0.3s ease-in-out;
+}
+
+#alert.active, #success.active {
+  top: 0;
+}

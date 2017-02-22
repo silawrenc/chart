@@ -1,0 +1,102 @@
+<label>
+  <input type="checkbox" name="regression" checked>
+  <h3>Regression</h3>
+</label>
+<dl><dt>type</dt><dd data-regression-type></dd>
+  <dt>r<sup>2</sup></dt><dd data-regression-r2></dd>
+  <dt>formula</dt><dd data-regression-formula></dd></dl>
+
+
+<label>
+  <input type="checkbox" name="data" checked>
+  <h3>Data</h3>
+</label>
+
+<button {{#if random}}class="active"{{/if}} data-toggle="random" data-toggle-trigger>random</button>
+<button {{#if linear}}class="active"{{/if}} data-toggle="linear" data-toggle-trigger>linear</button>
+<button {{#if polynomial}}class="active"{{/if}} data-toggle="polynomial" data-toggle-trigger>polynomial</button>
+
+<form {{#if random}}class="active"{{/if}} data-toggle="random" data-color="{{colour}}">
+  <p>random x,y pairs will be generated within the bounds given</p>
+
+  <input type="hidden" name="basis" value="random">
+
+  <label for="count">points</label>
+  <input type="number" name="count" value="100" step="any">
+  <br>
+
+  <label for="xmin">x<sub>min</sub></label>
+  <input type="number" name="xmin" value="0" step="any">
+  <br>
+  <label for="xmax">x<sub>max</sub></label>
+  <input type="number" name="xmax" value="100" step="any">
+  <br>
+  <label for="ymin">y<sub>min</sub></label>
+  <input type="number" name="ymin" value="0" step="any">
+  <br>
+  <label for="ymax">y<sub>max</sub></label>
+  <input type="number" name="ymax" value="100" step="any">
+  <button type="submit">regenerate data</button>
+</form>
+
+<form {{#if linear}}class="active"{{/if}} data-toggle="linear" data-color="{{colour}}">
+  <p>x,y pairs will be generated for the range of x values according to: y=mx+c+&epsilon; where -&Epsilon; &lt; &epsilon; &lt; &Epsilon; </p>
+
+  <input type="hidden" name="basis" value="linear">
+
+  <label for="count">points</label>
+  <input type="number" name="count" value="100" step="any">
+  <br>
+
+  <label for="xmin">x<sub>min</sub></label>
+  <input type="number" name="xmin" value="0" step="any">
+  <br>
+  <label for="xmax">x<sub>max</sub></label>
+  <input type="number" name="xmax" value="100" step="any">
+  <br>
+  <label for="m">m</label>
+  <input type="number" name="m" value="0.5" step="any">
+  <br>
+  <label for="c">c</label>
+  <input type="number" name="c" value="25" step="any">
+  <br>
+  <label for="e">&Epsilon;</label>
+  <input type="number" name="e" value="20" step="any">
+  <button type="submit">regenerate data</button>
+</form>
+
+<form {{#if polynomial}}class="active"{{/if}} data-toggle="polynomial" data-color="{{colour}}">
+  <p>x,y pairs will be generated using
+    <br>
+    y=a<sub>0</sub>+a<sub>1</sub>x+a<sub>2</sub>x<sup>2</sup>+a<sub>3</sub>x<sup>3</sup>+ε
+    <br>
+    where -Ε < ε < Ε</p>
+
+  <input type="hidden" name="basis" value="polynomial">
+
+  <label for="count">points</label>
+  <input type="number" name="count" value="100" step="any">
+  <br>
+
+  <label for="xmin">x<sub>min</sub></label>
+  <input type="number" name="xmin" value="0" step="any">
+  <br>
+  <label for="xmax">x<sub>max</sub></label>
+  <input type="number" name="xmax" value="100" step="any">
+  <br>
+  <label for="a0">a<sub>0</sub></label>
+  <input type="number" name="a0" value="10" step="any">
+  <br>
+  <label for="a1">a<sub>1</sub></label>
+  <input type="number" name="a1" value="-1" step="any">
+  <br>
+  <label for="a2">a<sub>2</sub></label>
+  <input type="number" name="a2" value="0.03" step="any">
+  <br>
+  <label for="a3">a<sub>3</sub></label>
+  <input type="number" name="a3" value="-0.0002" step="any">
+  <br>
+  <label for="e">&epsilon;</label>
+  <input type="number" name="e" value="8" step="any">
+  <button type="submit">regenerate data</button>
+</form>

@@ -1,0 +1,10 @@
+@import "./scaffolding.css";
+@import "./chart-container.css";
+@import "./data-set-colours.css";
+@import "./alerts.css";
+@import "./forms.css";
+
+@keyframes spin {
+    from {transform:rotate(90deg);}
+    to {transform:rotate(450deg);}
+}

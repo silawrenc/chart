@@ -1,0 +1,63 @@
+h2::before {
+  content: '';
+  display: block;
+  left: -1rem;
+  bottom: 0.25em;
+  position: absolute;
+  opacity: 0.6;
+  border-radius: 50%;
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+label h3 {
+  user-select: none;
+}
+
+label h3::before {
+  content: '';
+  display: block;
+  left: -1rem;
+  top: 0.1em;
+  position: absolute;
+  border: 0.2em solid #ddd;
+  line-height: 0.9em;
+  font-size: 0.9em;
+  opacity: 0.6;
+  border-radius: 0.15rem;
+  height: 0.8rem;
+  width: 0.8rem;
+}
+
+[data-control]:nth-of-type(1) > h2::before {
+  background: #5279c7;
+}
+
+[data-control]:nth-of-type(1) > label > input:checked + h3::before {
+  content: '\2714';
+  background: #5279c7;
+  color: white;
+  border-color: #5279c7;
+}
+
+[data-control]:nth-of-type(2) > h2::before {
+  background: #fad419;
+}
+
+[data-control]:nth-of-type(2) > label > input:checked + h3::before {
+  content: '\2714';
+  background: #fad419;
+  color: white;
+  border-color: #fad419;
+}
+
+[data-control]:nth-of-type(3) > h2::before {
+  background: #db2e65;
+}
+
+[data-control]:nth-of-type(3) > label > input:checked + h3::before {
+  content: '\2714';
+  background: #db2e65;
+  color: white;
+  border-color: #db2e65;
+}
